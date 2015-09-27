@@ -59,7 +59,9 @@ router.put('/beer/:id', function(req, res, next) {
 
 // delete a beer
 router.delete('/beer/:id', function(req, res, next) {
+  console.log(req.params.id);
   Beer.findByIdAndRemove(req.params.id, function(err, data){
+
     if(err){
       res.json({'message': err});
     } else {
